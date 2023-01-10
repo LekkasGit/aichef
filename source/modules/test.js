@@ -8,11 +8,21 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 async function OpenAI() {
+
     const response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: "hello!",
+        temperature: 0,
+        max_tokens: 100,
+        top_p: 1,
+        frequency_penalty: 0.0,
+        presence_penalty: 0.0,
+        stop: ["\n"],
+    });
 
-    })
+    console.log(response);
 
-    return({})
+    return (response);
 }
 
-module.exports = { OpenAi };
+module.exports = { OpenAI };
