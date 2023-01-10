@@ -1,13 +1,9 @@
-var express = require('express');
+var express = require("express");
 var app = express();
 
-app.set('view engine', 'pug');
-app.set('views', "./views")
-
-app.use(express.static('public'));
-
-app.get('/components', function(req,res) {
-    res.render('home');
-});
+app.get("/", function (req, res) {
+    currentTime = new tDate().toISOString().replace('T', ' ').substr(0, 19)
+    res.send(`[${currentTime}]: Hello World!`)
+})
 
 app.listen(3000);
