@@ -1,9 +1,10 @@
 var express = require("express");
 var app = express();
 
+const time = require("./source/modules/time");
+
 app.get("/", function (req, res) {
-    currentTime = new tDate().toISOString().replace('T', ' ').substr(0, 19)
-    res.send(`[${currentTime}]: Hello World!`)
+    res.send(time.prefix() + "Hello world!")
 })
 
 app.listen(3000);
