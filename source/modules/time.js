@@ -5,7 +5,7 @@ function current() {
     return time;
 }
 
-// Creats a prefix for the current time to be used in console logs
+// Creats a prefix for the current time to be used in console
 function prefix() {
     return `[${current()}]: `
 }
